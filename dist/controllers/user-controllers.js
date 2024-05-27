@@ -76,7 +76,9 @@ export const userLogin = async (req, res, next) => {
             httpOnly: true,
             signed: true,
         });
-        return res.status(200).json({ message: "Logined", email: user.email });
+        return res
+            .status(200)
+            .json({ message: "Logined", email: user.email, name: user.name });
     }
     catch (error) {
         console.log(error);

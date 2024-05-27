@@ -97,7 +97,9 @@ export const userLogin = async (
       signed: true,
     });
 
-    return res.status(200).json({ message: "Logined", email: user.email });
+    return res
+      .status(200)
+      .json({ message: "Logined", email: user.email, name: user.name });
   } catch (error) {
     console.log(error);
     return res.status(401).json({ message: "Error", cause: error.maeesage });
